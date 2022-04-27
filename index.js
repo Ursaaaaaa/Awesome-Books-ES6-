@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import BookClass from './modules/bookclass.js';
 import currentDate from './modules/date.js';
 
