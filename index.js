@@ -1,7 +1,6 @@
 import BookClass from './modules/bookclass.js';
 import currentDate from './modules/date.js';
 
-const bookList = document.querySelector('.books');
 const form = document.getElementById('added-book');
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
@@ -35,7 +34,6 @@ let books = [];
 const storeBooks = JSON.parse(localStorage.getItem('books'));
 
 if (storeBooks) {
-  books = storeBooks;
   BookClass.showBooks();
 }
 
