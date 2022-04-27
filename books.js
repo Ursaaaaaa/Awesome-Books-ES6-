@@ -1,3 +1,7 @@
+/* eslint-disable no-unused-vars */
+import BookClass from './modules/bookclass.js';
+import currentDate from './modules/date.js';
+
 const bookList = document.querySelector('.books');
 const form = document.getElementById('added-book');
 const titleInput = document.getElementById('title');
@@ -8,7 +12,6 @@ const contactMenu = document.querySelector('#contact-menu');
 const formSec = document.querySelector('#add-new');
 const listSec = document.querySelector('#list');
 const contSec = document.querySelector('#contact');
-const date = document.querySelector('.date');
 
 listMenu.addEventListener('click', () => {
   formSec.style.display = 'none';
@@ -30,50 +33,6 @@ contactMenu.addEventListener('click', () => {
 
 let books = [];
 
-class BookClass {
-  constructor(title, author, id) {
-    this.title = title;
-    this.author = author;
-    this.id = id;
-  }
-
-  bookCode() {
-    return `<article class="added-book"><p class="title">${this.title}</p>
-                 <p>${this.author}</p>
-                <button data-id=${this.id} class="remove">Remove</button>
-                </article><hr>`;
-  }
-
-  static addBook(book) {
-    let id = 1;
-    if (books.length > 0) {
-      id = books[books.length - 1].id + 1;
-    }
-    book.id = id;
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static remove(id) {
-    books = books.filter((b) => b.id !== Number(id));
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static showBooks() {
-    const booksCode = books
-      .map((book) => new BookClass(book.title, book.author, book.id)
-        .bookCode());
-    bookList.innerHTML = booksCode.join('');
-    const deleteBtn = document.querySelectorAll('.remove');
-    deleteBtn.forEach((el) => {
-      el.addEventListener('click', (e) => {
-        const id = e.target.getAttribute('data-id');
-        BookClass.remove(id);
-        BookClass.showBooks();
-      });
-    });
-  }
-}
 const storeBooks = JSON.parse(localStorage.getItem('books'));
 
 if (storeBooks) {
@@ -95,11 +54,5 @@ form.addEventListener('submit', (e) => {
   titleInput.value = '';
   authorInput.value = '';
 });
-
-const currentDate = () => {
-  const newDate = new Date();
-  date.innerHTML = `${newDate.toDateString()}, ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}pm `;
-  setTimeout(currentDate, 1000);
-};
 
 window.onload = currentDate();
