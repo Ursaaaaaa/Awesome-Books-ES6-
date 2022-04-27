@@ -2,7 +2,7 @@
 
 # Awesome Books
 
-> This is our first pair-programming project in Module 2.
+> This is our first pair-programming project in Module 2. We created am Application that aloows the USer to Add and Remove books they have read or come across in the MAgic Goose Catalogue
 
 ## Built With
 
@@ -17,7 +17,7 @@ Visit ...... to view online
 ## Getting Started
 
 **This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**Modify this file to match your project, remove sections that don't apply. And kinly give credit where it is due.**
 
 To get a local copy up and running follow these simple example steps.
 
@@ -32,7 +32,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo or download the repo files
 
-> git clone git@github.com:ramrod433/Awesome-Books.git
+> git clone git@github.com:ramrod433/Awesome-Books-ES6.git
 
 2. Open folder or zip in VS Code
 
