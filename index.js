@@ -29,8 +29,6 @@ contactMenu.addEventListener('click', () => {
   listSec.style.display = 'none';
 });
 
-let books = [];
-
 const storeBooks = JSON.parse(localStorage.getItem('books'));
 
 if (storeBooks) {
